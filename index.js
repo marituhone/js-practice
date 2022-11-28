@@ -4,10 +4,30 @@ for(var i = 0; i <add2 ; i++)
 {
         document.querySelectorAll(".drum")[i].addEventListener("click",function(){
                 button1 = this.innerHTML;
-                all(button1);
+                all(button1); 
+                Animation(button1);             
         })
 }
 
+
+document.addEventListener("keypress",function(event)
+{
+        all(event.key);
+        Animation(event.key)
+})
+
+function Animation(key3)
+{
+        var shdow = document.querySelector("." + key3);
+        shdow.classList.add("pressed");
+
+        setTimeout(function() {
+                shdow.classList.remove("pressed");
+        }, 100);
+
+              
+}
+              
 
 
 
